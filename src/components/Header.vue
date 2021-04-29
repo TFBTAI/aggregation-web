@@ -12,6 +12,7 @@
             <el-dropdown-item class="drop-item" @click.native="toPage('/login')" v-if="!isLogin">登录</el-dropdown-item>
             <el-dropdown-item class="drop-item" v-if="isLogin" disabled>{{userName}}</el-dropdown-item>
             <el-dropdown-item class="drop-item" @click.native="toPage('/registered')" v-if="!isLogin" divided>注册</el-dropdown-item>
+            <el-dropdown-item class="drop-item" @click.native="toPage('/admin')" v-if="isLogin">管理页面</el-dropdown-item>
             <el-dropdown-item class="drop-item" v-if="isLogin" @click.native="loginOut()">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>

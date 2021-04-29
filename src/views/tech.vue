@@ -56,7 +56,7 @@ export default {
   },
   methods:{
     async getNodeList() {
-      let resultList = await this.$axios.get(`http://localhost:8082/initPage/?category=tech`)
+      let resultList = await this.$axios.get(`initPage/?category=tech`)
           .then(
               async function(response){
                 return await response.data;
@@ -69,7 +69,7 @@ export default {
       this.nodeList = resultList
     },
     async getNodesSize() {
-      let nodeSize = await this.$axios.get(`http://localhost:8082/getNodesSize/?category=tech`)
+      let nodeSize = await this.$axios.get(`getNodesSize/?category=tech`)
           .then(
               async function(response){
                 return await response.data;
@@ -83,7 +83,7 @@ export default {
     },
     async getMoreNodes() {
       if(this.nodeList.length < this.nodeSize){
-        let resultList = await this.$axios.get(`http://localhost:8082/getMoreNodes/?category=tech`)
+        let resultList = await this.$axios.get(`getMoreNodes/?category=tech`)
             .then(
                 async function(response){
                   return await response.data;
@@ -159,7 +159,7 @@ export default {
       }
     },
     async updateCollNode(){
-      let result = await this.$axios.post(`http://localhost:8082/updateCollection/?username=${this.userName}&collection=${this.collection}`)
+      let result = await this.$axios.post(`updateCollection/?username=${this.userName}&collection=${this.collection}`)
           .then(
               async function(response){
                 return await response.data;

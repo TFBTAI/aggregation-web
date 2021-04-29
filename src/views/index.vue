@@ -208,7 +208,7 @@ export default {
   },
   methods:{
     async getNodeList() {
-      let result = await this.$axios.get("http://localhost:8082/initIndexPage/")
+      let result = await this.$axios.get("initIndexPage/")
           .then(
               async function(response){
                 return await response.data;
@@ -230,7 +230,7 @@ export default {
     },
     async userCollNode() {
       if(this.userName !== ''){
-        let result = await this.$axios.get(`http://localhost:8082/userCollNode/?username=${this.userName}`)
+        let result = await this.$axios.get(`userCollNode/?username=${this.userName}`)
             .then(
                 async function(response){
                   return await response.data;
@@ -294,7 +294,7 @@ export default {
       }
     },
     async updateCollNode(){
-      let result = await this.$axios.post(`http://localhost:8082/updateCollection/?username=${this.userName}&collection=${this.collection}`)
+      let result = await this.$axios.post(`updateCollection/?username=${this.userName}&collection=${this.collection}`)
           .then(
               async function(response){
                 return await response.data;

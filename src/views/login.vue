@@ -65,7 +65,7 @@ export default {
         })
         return
       }
-      let user = await this.$axios.post(`http://localhost:8082/login/?username=${this.loginForm.username}&password=${this.loginForm.password}`)
+      let user = await this.$axios.post(`login/?username=${this.loginForm.username}&password=${this.loginForm.password}`)
           .then(
               async function(response){
                 return await response.data;

@@ -9,7 +9,7 @@ import * as filter from './assets/js/filter'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios
+Vue.prototype.$axios = axios.create({baseURL: 'http://localhost:8082'})
 Vue.prototype.$qs = qs
 Vue.prototype.$bus = new Vue()
 
